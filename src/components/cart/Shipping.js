@@ -22,12 +22,12 @@ const Shipping = ({ history }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(saveShippingInfo({ adress, city, phoneNo, postalCode, country }))
-        history.push('/confirm');
+        history.push('/order/confirm');
     }
 
     return (
         <Fragment>
-            <MetaData title={'Shipping infop'} />
+            <MetaData title={'Shipping info'} />
 
             <CheckOutSteps shipping />
             <div className="row wrapper">
