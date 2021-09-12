@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getProductDetails, clearErrors } from '../../actions/productActions'
 import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
 
-const Cart = () => {
+const Cart = ({ history }) => {
 
     const dispatch = useDispatch();
 
@@ -30,6 +30,10 @@ const Cart = () => {
         if(newQty <= 0) return;
 
         dispatch(addItemToCart(id, newQty))
+    }
+
+    const checkoutHandler = () => {
+        history.push('/login?redirect=shipping')
     }
 
     return (
@@ -87,7 +91,7 @@ const Cart = () => {
                     <p>Est. total: <span className="order-summary-values">${cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)}</span></p>
     
                     <hr />
-                    <button id="checkout_btn" className="btn btn-primary btn-block">Check out</button>
+                    <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Check out</button>
                 </div>
             </div>
         </div>
