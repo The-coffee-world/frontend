@@ -11,7 +11,7 @@ const Shipping = ({ history }) => {
 
     const { shippingInfo } = useSelector(state => state.cart)
 
-    const [adress, setAddress] = useState(shippingInfo.adress)
+    const [address, setAddress] = useState(shippingInfo.address)
     const [city, setCity] = useState(shippingInfo.city)
     const [postalCode, setPostalCode] = useState(shippingInfo.postalCode)
     const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo)
@@ -21,7 +21,7 @@ const Shipping = ({ history }) => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(saveShippingInfo({ adress, city, phoneNo, postalCode, country }))
+        dispatch(saveShippingInfo({ address, city, phoneNo, postalCode, country }))
         history.push('/order/confirm');
     }
 
@@ -40,7 +40,7 @@ const Shipping = ({ history }) => {
                                 type="text"
                                 id="address_field"
                                 className="form-control"
-                                value={adress}
+                                value={address}
                                 onChange={(e) => setAddress(e.target.value)}
                                 required
                             />

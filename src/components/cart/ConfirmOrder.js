@@ -38,7 +38,7 @@ const ConfirmOrder = ({ history }) => {
                 <h4 className="mb-3">Shipping Info</h4>
                 <p><b>Name:</b> {user && user.name}</p>
                 <p><b>Phone:</b> {shippingInfo.phoneNo}</p>
-                <p className="mb-4"><b>Address:</b> {`${shippingInfo.adress}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`}</p>
+                <p className="mb-4"><b>Address:</b> {`${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`}</p>
                 
                 <hr />
                 <h4 className="mt-4">Your Cart Items:</h4>
