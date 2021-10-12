@@ -198,13 +198,13 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
 // Logout
 export const logoutUser = () => async (dispatch) => {
     try {
-
         await axios.get('/api/v1/logout')
 
         dispatch({ 
             type: LOGOUT_SUCCESS
          })
     } catch (error) {
+        console.log("Entro", error)
         dispatch({
             type: LOGOUT_FAIL,
             payload: error.response.data.message
